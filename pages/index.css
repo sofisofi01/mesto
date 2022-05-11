@@ -1,4 +1,5 @@
 @import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
@@ -27,8 +28,3 @@
 @import url(../blocks/pop-up/__close/pop-up__close.css);
 @import url(../blocks/background/_opened/background_opened.css);
 @import url(../blocks/pop-up/_opened/pop-up_opened.css);
-@import url('https://rsms.me/inter/inter.css');
-html { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
-}
