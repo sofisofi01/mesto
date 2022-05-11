@@ -1,0 +1,27 @@
+.element__like-button {
+  width: 22px;
+  height: 19px;
+  background-color: white;
+  border: white;
+  background-image: url(../../../images/Vectorheart.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 21px;
+  padding: 0;
+  margin-left: auto;
+  transition: all .1s linear;
+  box-sizing: border-box;
+}
+
+.element__like-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.element__like-button:active {
+  background-image: url(../../../images/Union.svg);
+}
+
+.element__like-button:disabled {
+  background-image: url(../../../images/Vectorheart.svg);
+}

@@ -1,0 +1,10 @@
+.element__name {
+  display: flex;
+  flex-direction: row;
+  height: 79px;
+  align-items: center;
+  justify-content: space-between;
+  width: 246px;
+  padding: 0;
+  margin: 0 auto;
+}

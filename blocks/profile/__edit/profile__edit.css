@@ -1,0 +1,9 @@
+.profile__edit {
+  max-width: 336px;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 auto 10px auto;
+}
