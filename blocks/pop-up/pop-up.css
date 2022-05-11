@@ -1,5 +1,5 @@
 .pop-up {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -12,10 +12,10 @@
   border-radius: 10px;
   margin: auto;
   padding: 0;
-  display: none;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
