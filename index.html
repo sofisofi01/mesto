@@ -26,57 +26,16 @@
         <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
-        <div class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1088404-unsplash1.jpg" alt="Фотография Карачаевска">
-          <div class="element__name">
-            <h2 class="element__title">Карачаевск</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1404681-unsplash2.png" alt="Фотография Эльбруса">
-          <div class="element__name">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1556355-unsplash3.png" alt="Фотография Домбая">
-          <div class="element__name">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1404681-unsplash2.png" alt="Фотография Эльбруса">
-          <div class="element__name">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1556355-unsplash3.png" alt="Фотография Домбая">
-          <div class="element__name">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/kirill-pershin-1088404-unsplash1.jpg" alt="Фотография Карачаевска">
-          <div class="element__name">
-            <h2 class="element__title">Карачаево-Черкесск</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </div>
+
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
   </div>
-  <div class="background">
-    <form class="pop-up" name="profile">
-      <button class="pop-up__close" type="button"></button>
+  <div class="background" id="background-name">
+    <form class="pop-up" id="nam">
+      <button class="pop-up__close" id="name-close" type="button"></button>
       <h2 class="pop-up__title">Редактировать профиль</h2>
       <input class="pop-up__name" id="name" type="text" name="title" placeholder="Имя" minlength="1" maxlength="100"
         value="Имя">
@@ -85,6 +44,25 @@
       <button class="pop-up__save" type="submit">Сохранить</button>
     </form>
   </div>
+  <div class="background" id="background-img">
+    <form class="pop-up" id="img">
+      <button class="pop-up__close" id="img-close" type="button"></button>
+      <h2 class="pop-up__title">Новое место</h2>
+      <input class="pop-up__name" id="popup-title" type="text" name="image-name" placeholder="Название" minlength="1"
+        maxlength="100">
+      <input class="pop-up__description" id="popup-link" type="link" name="image-link" placeholder="Ссылка на картинку"
+        minlength="1" maxlength="100">
+      <button class="pop-up__save" type="submit">Сохранить</button>
+    </form>
+  </div>
+  <template id="element">
+    <div class="element">
+      <img class="element__photo" src="./images/kirill-pershin-1088404-unsplash1.jpg" alt="Фотография Карачаевска">
+      <div class="element__name">
+        <h2 class="element__title">Карачаевск</h2>
+        <button class="element__like-button" type="button"></button>
+      </div>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 
