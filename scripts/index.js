@@ -7,8 +7,6 @@ const closeNameButton = document.getElementById('name-close');
 const closeImgButton = document.getElementById('img-close');
 const openImgButton = document.querySelector('.profile__add-button');
 const image = document.querySelector('.element__photo');
-let elementPhoto = document.querySelector('.element__photo');
-let elementName = document.querySelector('.element__title');
 let profileName = document.querySelector('.profile__name');
 let profileDescription = document.querySelector('.profile__description');
 let popupName = document.querySelector('.pop-up__name');
@@ -50,6 +48,25 @@ initialCards.forEach(function (item) {
   userElement.querySelector('.element__photo').alt = item.name;
   userElement.querySelector('.element__title').textContent = item.name;
   elements.append(userElement);
+  userElement.querySelector('.element__like-button').addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like-button_active');
+  });
+  userElement.querySelector('.element__bin-button').addEventListener('click', function (evt) {
+    userElement.remove();
+  });
+  const pictureTemplate = document.querySelector('#picture').content;
+  const page = document.querySelector('.page');
+  const userPicture = pictureTemplate.querySelector('.picture').cloneNode(true);
+  userPicture.querySelector('.picture__image').src = item.link;
+  userPicture.querySelector('.picture__image').alt = item.name;
+  userPicture.querySelector('.picture__caption').textContent = item.name;
+  page.append(userPicture);
+  userElement.querySelector('.element__photo').addEventListener('click', function (evt) {
+    userPicture.classList.add('background_opened');
+  });
+  userPicture.querySelector('.picture__close-button').addEventListener('click', function (evt) {
+    userPicture.classList.remove('background_opened');
+  });
 });
 
 
@@ -90,9 +107,27 @@ function formSubmitHandler2(evt) {
   userElement.querySelector('.element__photo').alt = popupTitle.value;
   userElement.querySelector('.element__title').textContent = popupTitle.value;
   elements.prepend(userElement);
+  userElement.querySelector('.element__like-button').addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like-button_active');
+  });
+  userElement.querySelector('.element__bin-button').addEventListener('click', function (evt) {
+    userElement.remove();
+  });
+  const pictureTemplate = document.querySelector('#picture').content;
+  const page = document.querySelector('.page');
+  const userPicture = pictureTemplate.querySelector('.picture').cloneNode(true);
+  userPicture.querySelector('.picture__image').src = popupLink.value;
+  userPicture.querySelector('.picture__image').alt = popupTitle.value;
+  userPicture.querySelector('.picture__caption').textContent = popupTitle.value;
+  page.append(userPicture);
+  userElement.querySelector('.element__photo').addEventListener('click', function (evt) {
+    userPicture.classList.add('background_opened');
+  });
+  userPicture.querySelector('.picture__close-button').addEventListener('click', function (evt) {
+    userPicture.classList.remove('background_opened');
+  });
   closeImg();
 }
-
 
 
 openNameButton.addEventListener('click', openNam);

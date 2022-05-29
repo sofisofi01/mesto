@@ -18,10 +18,3 @@
   cursor: pointer;
 }
 
-.element__like-button:active {
-  background-image: url(../../../images/Union.svg);
-}
-
-.element__like-button:disabled {
-  background-image: url(../../../images/Vectorheart.svg);
-}
