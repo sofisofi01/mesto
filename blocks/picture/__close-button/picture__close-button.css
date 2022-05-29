@@ -15,7 +15,7 @@
   margin-bottom: 8px;
 }
 
-.picture__close-button {
+.picture__close-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
