@@ -1,4 +1,4 @@
-.pop-up__close {
+.form__close {
   z-index: 1;
   position: absolute;
   border: none;
@@ -15,13 +15,13 @@
   top: -40px;
 }
 
-.pop-up__close:hover {
+.form__close:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .pop-up__close {
+  .form__close {
     width: 20px;
     background-size: 20px;
     height: 20px;

@@ -1,4 +1,4 @@
-.pop-up__save {
+.form__save {
   width: 358px;
   height: 50px;
   padding: 0;
@@ -14,14 +14,14 @@
   transition: all .1s linear;
 }
 
-.pop-up__save:hover {
+.form__save:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
 
 @media (max-width: 768px) {
-  .pop-up__save {
+  .form__save {
     width: 238px;
     height: 46px;
     margin: 45px auto 0 22px;

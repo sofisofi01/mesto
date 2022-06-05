@@ -1,4 +1,4 @@
-.pop-up__description {
+.form__description {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 768px) {
-  .pop-up__description {
+  .form__description {
     width: 238px;
     height: 27px;
     margin: 30px auto 0 22px;
