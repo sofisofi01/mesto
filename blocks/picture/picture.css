@@ -11,5 +11,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 75vw;
+  width: fit-content; 
 }
