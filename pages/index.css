@@ -34,4 +34,5 @@
 @import url(../blocks/picture/__frame/picture__frame.css);
 @import url(../blocks/picture/__image/picture__image.css);
 @import url(../blocks/picture/__close-button/picture__close-button.css);
+@import url(../blocks/picture/__item/picture__item.css);
 @import url(../blocks/pop-up/_opened/pop-up_opened.css);
