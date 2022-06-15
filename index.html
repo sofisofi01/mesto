@@ -34,13 +34,19 @@
     </footer>
   </div>
   <div class="pop-up" id="name">
-    <form class="form form_name" id="nam">
+    <form class="form form_name" id="name">
       <button class="form__close form__close-profile" type="button"></button>
       <h2 class="form__title">Редактировать профиль</h2>
-      <input class="form__name" id="popup-name" type="text" name="title" placeholder="Имя" minlength="1" maxlength="100"
-        value="">
-      <input class="form__description" id="popup-description" type="text" name="subtitle" placeholder="О себе" minlength="1"
-        maxlength="100" value="">
+      <label>
+        <input class="form__input form__name" id="popup-name" type="text" name="title" placeholder="Имя" minlength="2"
+          maxlength="40" value="" required>
+        <span class="form__error popup-name-error"></span>
+      </label>
+      <label>
+        <input class="form__input form__description" id="popup-description" type="text" name="subtitle" placeholder="О себе"
+          minlength="2" maxlength="200" value="" required>
+        <span class="form__error popup-description-error"></span>
+      </label>
       <button class="form__save" type="submit">Сохранить</button>
     </form>
   </div>
@@ -48,10 +54,16 @@
     <form class="form form_img" id="img">
       <button class="form__close form__close-card" id="img-close" type="button"></button>
       <h2 class="form__title">Новое место</h2>
-      <input class="form__name" id="popup-title" type="text" name="image-name" placeholder="Название" minlength="1"
-        maxlength="100">
-      <input class="form__description" id="popup-link" type="url" name="image-link" placeholder="Ссылка на картинку"
-        minlength="1" maxlength="100">
+      <label>
+        <input class="form__input form__name" id="popup-title" type="text" name="image-name" placeholder="Название" minlength="2"
+          maxlength="30" required>
+        <span class="form__error popup-title-error"></span>
+      </label>
+      <label>
+        <input class="form__input form__description" id="popup-link" type="url" name="image-link" placeholder="Ссылка на картинку"
+          required>
+        <span class="form__error popup-link-error"></span>
+      </label>
       <button class="form__save" type="submit">Сохранить</button>
     </form>
   </div>
@@ -65,17 +77,18 @@
       </div>
     </div>
   </template>
-  <div class="pop-up pop-up_pic">
+  <div class="pop-up" id="pop-up_pic">
     <div class="picture">
       <div class="picture__frame">
         <div class="picture__item">
-        <img class="picture__image" src="#" alt="">
-        <button class="picture__close-button" type="button"></button>
-      </div>
+          <img class="picture__image" src="#" alt="">
+          <button class="picture__close-button" type="button"></button>
+        </div>
         <p class="picture__caption"></p>
       </div>
     </div>
   </div>
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 

@@ -1,22 +1,3 @@
 .form__description {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  padding: 0;
-  margin: 26px auto 0 36px;
-  width: 358px;
-  height: 31px;
-  outline: none;
-  border: none;
-  color: #000000;
-  border-bottom: 1px solid #000000;
-}
 
-@media (max-width: 768px) {
-  .form__description {
-    width: 238px;
-    height: 27px;
-    margin: 30px auto 0 22px;
-  }
 }

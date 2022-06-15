@@ -1,6 +1,6 @@
 const profilePopup = document.querySelector('#name');
 const cardPopup = document.querySelector('#image');
-const picturePopup = document.querySelector('.pop-up_pic');
+const picturePopup = document.querySelector('#pop-up_pic');
 const buttonOpenProfile = document.querySelector('.profile__edit-button');
 const buttonCloseProfile = document.querySelector('.form__close-profile');
 const profileName = document.querySelector('.profile__name');
@@ -17,6 +17,7 @@ const elementTemplate = document.querySelector('#element').content;
 const cardsContainer = document.querySelector('.elements');
 const popupTitle = picturePopup.querySelector('.picture__caption');
 const popupPicture = picturePopup.querySelector('.picture__image');
+const page = document.querySelector('.page');
 const initialCards = [{
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -77,17 +78,31 @@ function addPicturePopup(userElement) {
 
 function saveCard(evt) {
   evt.preventDefault();
-  cardsContainer.prepend(createCard({ name: popupCaption.value, link: popupLink.value }));
+  cardsContainer.prepend(createCard({
+    name: popupCaption.value,
+    link: popupLink.value
+  }));
   closePopup(cardPopup);
   cardForm.reset();
 }
 
 function openPopup(popup) {
   popup.classList.add('pop-up_opened');
+  document.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Escape') {
+      closePopup(popup);
+    }
+  });
 }
 
 function closePopup(popup) {
   popup.classList.remove('pop-up_opened');
+  cardForm.reset();
+  document.removeEventListener('keydown', function (evt) {
+    if (evt.key === 'Escape') {
+      closePopup(popup);
+    }
+  });
 }
 
 function openName() {
@@ -102,6 +117,17 @@ function changeProfile(evt) {
   profileDescription.textContent = popupDescription.value;
   closePopup(profilePopup);
 }
+
+function closeOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.target);
+  }
+}
+
+document.querySelectorAll('.pop-up').forEach((popup) => {
+  popup.addEventListener('mousedown', closeOverlay);
+});
+
 
 buttonOpenProfile.addEventListener('click', openName);
 buttonCloseProfile.addEventListener('click', () => closePopup(profilePopup));
