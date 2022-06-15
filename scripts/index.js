@@ -1,4 +1,4 @@
-const profilePopup = document.querySelector('#name');
+const profilePopup = document.querySelector('#nam');
 const cardPopup = document.querySelector('#image');
 const picturePopup = document.querySelector('#pop-up_pic');
 const buttonOpenProfile = document.querySelector('.profile__edit-button');
