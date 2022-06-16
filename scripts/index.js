@@ -2,7 +2,7 @@ const profilePopup = document.querySelector('#nam');
 const cardPopup = document.querySelector('#image');
 const picturePopup = document.querySelector('#pop-up_pic');
 const buttonOpenProfile = document.querySelector('.profile__edit-button');
-const buttonCloseProfile = document.querySelector('.form__close-profile');
+const buttonCloseProfile = document.querySelector('.pop-up__close-profile');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 const popupName = document.querySelector('#popup-name');
@@ -10,7 +10,7 @@ const popupDescription = document.querySelector('#popup-description');
 const popupLink = document.querySelector('#popup-link');
 const popupCaption = document.querySelector('#popup-title');
 const buttonOpenCard = document.querySelector('.profile__add-button');
-const buttonCloseCard = document.querySelector('.form__close-card');
+const buttonCloseCard = document.querySelector('.pop-up__close-card');
 const profileForm = document.querySelector('.form_name');
 const cardForm = document.querySelector('.form_img');
 const elementTemplate = document.querySelector('#element').content;
@@ -57,7 +57,7 @@ function createCard(item) {
   userElement.querySelector('.element__bin-button').addEventListener('click', function (evt) {
     userElement.remove();
   });
-  addPicturePopup(userElement);
+  addPicturePopup(elementPhoto);
   return userElement;
 }
 
@@ -65,9 +65,8 @@ initialCards.forEach(function (item) {
   cardsContainer.append(createCard(item));
 });
 
-function addPicturePopup(userElement) {
-  userElement.querySelector('.element__photo').addEventListener('click', () => {
-    const elementPhoto = userElement.querySelector('.element__photo');
+function addPicturePopup(elementPhoto) {
+  elementPhoto.addEventListener('click', () => {
     popupPicture.alt = elementPhoto.alt;
     popupPicture.src = elementPhoto.src;
     popupTitle.textContent = elementPhoto.alt;
@@ -75,6 +74,12 @@ function addPicturePopup(userElement) {
   });
 }
 
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.pop-up_opened');
+    closePopup(openedPopup);
+  }
+}
 
 function saveCard(evt) {
   evt.preventDefault();
@@ -84,25 +89,17 @@ function saveCard(evt) {
   }));
   closePopup(cardPopup);
   cardForm.reset();
+  document.querySelector('.form__save').disabled = true;
 }
 
 function openPopup(popup) {
   popup.classList.add('pop-up_opened');
-  document.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
-      closePopup(popup);
-    }
-  });
+  document.addEventListener('keydown', closeByEscape);
 }
 
 function closePopup(popup) {
   popup.classList.remove('pop-up_opened');
-  cardForm.reset();
-  document.removeEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
-      closePopup(popup);
-    }
-  });
+  document.removeEventListener('keydown', closeByEscape);
 }
 
 function openName() {
@@ -135,4 +132,4 @@ buttonOpenCard.addEventListener('click', () => openPopup(cardPopup));
 buttonCloseCard.addEventListener('click', () => closePopup(cardPopup));
 profileForm.addEventListener('submit', changeProfile);
 cardForm.addEventListener('submit', saveCard);
-picturePopup.querySelector('.picture__close-button').addEventListener('click', () => closePopup(picturePopup));
+picturePopup.querySelector('.pop-up__close_img').addEventListener('click', () => closePopup(picturePopup));
