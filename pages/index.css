@@ -23,8 +23,10 @@
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/pop-up/_pic/pop-up_pic.css);
 @import url(../blocks/form/form.css);
+/*
 @import url(../blocks/form/__description/form__description.css);
 @import url(../blocks/form/__name/form__name.css);
+*/
 @import url(../blocks/form/__save/form__save.css);
 @import url(../blocks/form/__title/form__title.css);
 @import url(../blocks/form/__input/form__input.css);

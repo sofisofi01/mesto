@@ -92,10 +92,13 @@ function saveCard(evt) {
 }
 
 function openPopup(popup) {
-  popup.querySelector('.form__save').disabled = true;
-  popup.querySelector('.form__save').classList.add('form__save_disabled');
   popup.classList.add('pop-up_opened');
   document.addEventListener('keydown', closeByEscape);
+}
+
+function disableButton(popup) {
+  popup.querySelector('.form__save').disabled = true;
+  popup.querySelector('.form__save').classList.add('form__save_disabled'); 
 }
 
 function closePopup(popup) {
@@ -105,8 +108,14 @@ function closePopup(popup) {
 
 function openName() {
   openPopup(profilePopup);
+  disableButton(profilePopup);
   popupName.value = profileName.textContent;
   popupDescription.value = profileDescription.textContent;
+}
+
+function openImg() {
+  openPopup(cardPopup);
+  disableButton(cardPopup);
 }
 
 function changeProfile(evt) {
@@ -129,7 +138,7 @@ document.querySelectorAll('.pop-up').forEach((popup) => {
 
 buttonOpenProfile.addEventListener('click', openName);
 buttonCloseProfile.addEventListener('click', () => closePopup(profilePopup));
-buttonOpenCard.addEventListener('click', () => openPopup(cardPopup));
+buttonOpenCard.addEventListener('click', openImg);
 buttonCloseCard.addEventListener('click', () => closePopup(cardPopup));
 profileForm.addEventListener('submit', changeProfile);
 cardForm.addEventListener('submit', saveCard);
