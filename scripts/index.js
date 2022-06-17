@@ -11,9 +11,9 @@ const popupLink = document.querySelector('#popup-link');
 const popupCaption = document.querySelector('#popup-title');
 const buttonOpenCard = document.querySelector('.profile__add-button');
 const buttonCloseCard = document.querySelector('.pop-up__close-card');
-const profileForm = document.querySelector('.form_name');
+const profileForm = document.querySelector('.form_profile');
 const cardForm = document.querySelector('.form_img');
-const elementTemplate = document.querySelector('#element').content;
+const elementTemplate = document.querySelector('#element').content; 
 const cardsContainer = document.querySelector('.elements');
 const popupTitle = picturePopup.querySelector('.picture__caption');
 const popupPicture = picturePopup.querySelector('.picture__image');
@@ -89,10 +89,11 @@ function saveCard(evt) {
   }));
   closePopup(cardPopup);
   cardForm.reset();
-  document.querySelector('.form__save').disabled = true;
 }
 
 function openPopup(popup) {
+  popup.querySelector('.form__save').disabled = true;
+  popup.querySelector('.form__save').classList.add('form__save_disabled');
   popup.classList.add('pop-up_opened');
   document.addEventListener('keydown', closeByEscape);
 }
